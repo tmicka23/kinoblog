@@ -23,3 +23,13 @@ import Route from '@ioc:Adonis/Core/Route'
 Route.get('/', async () => {
   return { welcome: 'to the Kinoblog ! An API that reports kinobabos news 🎉' }
 })
+
+Route.post('/accounts', 'AccountsController.store')
+Route.post('/login', 'SessionsController.login')
+
+Route.group(() => {
+  Route.delete('/logout', 'SessionsController.logout')
+  Route.get('/accounts/me', 'AccountsController.show')
+  Route.put('/accounts/me', 'AccountsController.update')
+  Route.delete('/accounts/me', 'AccountsController.destroy')
+}).middleware(['auth'])
