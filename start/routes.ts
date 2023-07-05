@@ -31,5 +31,5 @@ Route.group(() => {
   Route.delete('/logout', 'SessionsController.logout')
   Route.get('/accounts/me', 'AccountsController.show')
   Route.put('/accounts/me', 'AccountsController.update')
-  Route.delete('/accounts', 'AccountsController.destroy')
+  Route.delete('/accounts/me', 'AccountsController.destroy')
 }).middleware(['auth'])
