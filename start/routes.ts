@@ -21,5 +21,5 @@
 import Route from '@ioc:Adonis/Core/Route'
 
 Route.get('/', async () => {
-  return { hello: 'world' }
+  return { welcome: 'to the Kinoblog ! An API that reports kinobabos news 🎉' }
 })
