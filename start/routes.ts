@@ -29,7 +29,10 @@ Route.post('/login', 'SessionsController.login')
 
 Route.group(() => {
   Route.delete('/logout', 'SessionsController.logout')
+
   Route.get('/accounts/me', 'AccountsController.show')
   Route.put('/accounts/me', 'AccountsController.update')
   Route.delete('/accounts/me', 'AccountsController.destroy')
+
+  Route.resource('posts', 'PostsController').only(['index', 'store', 'show', 'update', 'destroy'])
 }).middleware(['auth'])
